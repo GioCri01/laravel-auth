@@ -26,6 +26,11 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                    vai al sito pubblico
                 </a>
+                @auth
+                    <a class="navbar-brand" href="{{ route("admin.post.index") }}">
+                    vai alla pagina index
+                    </a>
+                @endauth
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
