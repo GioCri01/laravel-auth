@@ -35,9 +35,9 @@ class PostRequest extends FormRequest
             'title.required'=>'Il titolo è obbligatorio',
             'title.max'=>'il titolo puo contenere al massimo :max caratteri',
             'title.min'=>'il titolo deve contenere almeno :min caratteri',
-            'content.required'=>'Il titolo è obbligatorio',
-            'content.max'=>'il titolo puo contenere al massimo :max caratteri',
-            'content.min'=>'il titolo deve contenere almeno :min caratteri'
+            'content.required'=>'Il contenuto è obbligatorio',
+            'content.max'=>'il contenuto puo contenere al massimo :max caratteri',
+            'content.min'=>'il contenuto deve contenere almeno :min caratteri'
         ];
     }
 }
