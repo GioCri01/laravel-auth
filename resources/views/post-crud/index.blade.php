@@ -17,7 +17,10 @@
             <tr>
                 <th scope="row">{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
-                <td><a class="btn btn-info" href="{{ route("admin.post.show",$post) }}">Show</a></td>
+                <td>
+                    <a class="btn btn-info" href="{{ route("admin.post.show",$post) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route("admin.post.edit",$post) }}">edit</a>
+                </td>
 
               </tr>
             @endforeach
