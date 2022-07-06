@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Post;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -25,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view("post-crud.create");
     }
 
     /**
@@ -34,9 +35,16 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+       $data = $request->all();
+       $new_post = new Post();
+       $data["slug"] = Post::generateSlug($data["title"]);
+       $new_post->fill($data);
+
+       $new_post->save();
+
+       return redirect()->route("admin.post.show" , $new_post);
     }
 
     /**
@@ -47,7 +55,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+       return view("post-crud.show", compact("post"));
     }
 
     /**
