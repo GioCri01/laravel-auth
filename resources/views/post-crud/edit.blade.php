@@ -8,11 +8,12 @@
         @method("PUT")
         <div class="mb-3 ">
           <label for="exampleInputEmail1" class="form-label">Titolo</label>
-          <input type="text" class="form-control" id="title" name="title" placeholder="Inserisci il Titolo" >
+          <input type="text" class="form-control" id="title" name="title" placeholder="Inserisci il Titolo" value="{{ old("title") }}" >
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Inserisci Contenuto</label>
-            <textarea class="form-control " name="content" id="content" cols="30" rows="10"></textarea>
+            <textarea class="form-control " name="content" id="content" cols="30" rows="10" >
+            </textarea>
         </div>
 
 

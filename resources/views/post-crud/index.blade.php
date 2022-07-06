@@ -20,6 +20,13 @@
                 <td>
                     <a class="btn btn-info" href="{{ route("admin.post.show",$post) }}">Show</a>
                     <a class="btn btn-info" href="{{ route("admin.post.edit",$post) }}">edit</a>
+                    <form class="d-inline" action="{{ route("admin.post.destroy",$post) }}" method="POST" onsubmit="return confirm('vuoi eliminare {{ $post->title }}')"
+                    >
+                    @csrf
+                    @method("DELETE")
+
+                    <button class="btn btn-danger" type="submit">delete</button>
+                </form>
                 </td>
 
               </tr>
